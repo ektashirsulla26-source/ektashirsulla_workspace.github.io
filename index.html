@@ -1,90 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ekta | Data Analyst</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ekta Shirsulla | Data Analyst</title>
+<link rel="stylesheet" href="style.css">
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
 <!-- NAVBAR -->
 <nav class="navbar">
     <h2>Ekta</h2>
     <ul>
-        <li><a href="#about">About</a></li>
+        <li><a href="#summary">Summary</a></li>
         <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
         <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
     </ul>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
-    <h1>Hi, I'm Ekta 👋</h1>
-    <p class="typing"></p>
-    <div class="buttons">
-        <a href="#projects" class="btn">View Projects</a>
-        <a href="#" class="btn-outline">Download Resume</a>
+    <div class="hero-content">
+        <h1>Hi, I'm Ekta 👋</h1>
+        <h2 class="typing"></h2>
+        <p>Turning data into business decisions & real-world impact.</p>
+        <div class="buttons">
+            <a href="#projects" class="btn">View Projects</a>
+            <a href="#" class="btn-outline">Resume</a>
+        </div>
     </div>
 </section>
 
-<!-- ABOUT -->
-<section id="about" class="section">
-    <h2>About Me</h2>
+<!-- SUMMARY -->
+<section id="summary" class="section fade-in">
+    <h2>Summary</h2>
     <p>
-        I am a Data Analyst passionate about solving real-world problems using data.
-        I specialize in Machine Learning, Statistical Modeling, and Data Visualization.
+       M.Sc. Statistics graduate with expertise in data analysis, machine learning, and MIS reporting.
+       Skilled in building dashboards, performing exploratory data analysis, and developing predictive models 
+       using Python, SQL, and Power BI. Proven ability to translate complex data into actionable insights and 
+       support data-driven decision-making across business functions.
     </p>
 </section>
 
 <!-- SKILLS -->
-<section id="skills" class="section">
-    <h2>Skills</h2>
+<section id="skills" class="section fade-in">
+    <h2>Technical Skills</h2>
+
     <div class="grid">
-        <div class="card">📊 Python, Pandas, NumPy</div>
-        <div class="card">🤖 Machine Learning</div>
-        <div class="card">📈 Matplotlib, Seaborn</div>
-        <div class="card">🛠 SQL, Excel, Git</div>
+        <div class="card">💾 SQL, Excel, Azure, GCP</div>
+        <div class="card">🤖 Scikit-Learn, Machine Learning, Python, R, Deep Learning</div>
+        <div class="card">📊 Pandas, Matplotlib, Plotly, Power BI, Tableau</div>
+        <div class="card">⚙️ Git, VS Code, Streamlit</div>
+        <div class="card">📈 Business Intelligence</div>
+    </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" class="section fade-in">
+    <h2>Experience</h2>
+
+    <div class="timeline">
+        <div class="timeline-item">
+            <h3>Data Analyst Intern – Cognifyz</h3>
+            <p>Built dashboards, performed EDA, delivered insights</p>
+        </div>
+
+        <div class="timeline-item">
+            <h3>Data Analyst Trainee – DES Mumbai</h3>
+            <p>Validated datasets, created MIS reports</p>
+        </div>
     </div>
 </section>
 
 <!-- PROJECTS -->
-<section id="projects" class="section">
+<section id="projects" class="section fade-in">
     <h2>Projects</h2>
 
-    <!-- Featured Project -->
-    <div class="project featured">
-        <h3>Street Vendors Analysis – Mumbai</h3>
-        <p>
-            Statistical study using Regression, Clustering, and Poisson Models
-            to analyze income, migration, and customer behavior.
-        </p>
-        <p class="highlight">
-            Key Insight: Non-food vendors earn significantly lower income.
-        </p>
-        <a href="#" class="btn">GitHub</a>
+    <div class="project-card">
+        <h3>Street Vendors Analysis</h3>
+        <p>Regression + Clustering + Poisson Models</p>
     </div>
 
-    <!-- Other Projects -->
-    <div class="grid">
-        <div class="project">
-            <h3>Telecom Churn Prediction</h3>
-            <p>ML model to predict customer churn</p>
-        </div>
-
-        <div class="project">
-            <h3>Credit Risk Model</h3>
-            <p>Predict loan default risk using ML</p>
-        </div>
+    <div class="project-card">
+        <h3>Churn Prediction</h3>
+        <p>ML model with Streamlit deployment</p>
     </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact" class="section">
-    <h2>Contact</h2>
-    <p>Email: your@email.com</p>
-    <p>LinkedIn | GitHub</p>
 </section>
 
 <script src="script.js"></script>
