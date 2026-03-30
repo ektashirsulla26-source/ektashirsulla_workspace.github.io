@@ -1,30 +1,40 @@
-const text = ["Data Analyst", "Machine Learning Enthusiast", "Data Scientist"];
-let i = 0;
-let j = 0;
-let currentText = "";
-let isDeleting = false;
+// Typing effect
+const roles = ["Data Analyst", "Machine Learning Enthusiast", "Data Scientist"];
+let i = 0, j = 0, current = "", deleting = false;
 
 function type() {
-    currentText = text[i];
-    
-    if (isDeleting) {
-        document.querySelector(".typing").textContent = currentText.substring(0, j--);
+    current = roles[i];
+
+    document.querySelector(".typing").textContent =
+        current.substring(0, j);
+
+    if (!deleting) {
+        j++;
+        if (j > current.length) {
+            deleting = true;
+            setTimeout(type, 1000);
+            return;
+        }
     } else {
-        document.querySelector(".typing").textContent = currentText.substring(0, j++);
+        j--;
+        if (j === 0) {
+            deleting = false;
+            i = (i + 1) % roles.length;
+        }
     }
 
-    if (!isDeleting && j === currentText.length) {
-        isDeleting = true;
-        setTimeout(type, 1000);
-        return;
-    }
-
-    if (isDeleting && j === 0) {
-        isDeleting = false;
-        i = (i + 1) % text.length;
-    }
-
-    setTimeout(type, isDeleting ? 50 : 100);
+    setTimeout(type, deleting ? 50 : 100);
 }
-
 type();
+
+// Scroll animation
+const elements = document.querySelectorAll(".fade-in");
+
+window.addEventListener("scroll", () => {
+    elements.forEach(el => {
+        const position = el.getBoundingClientRect().top;
+        if (position < window.innerHeight - 100) {
+            el.classList.add("visible");
+        }
+    });
+});
