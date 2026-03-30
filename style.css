@@ -1,1 +1,95 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0B0F19;
+    color: #E5E7EB;
+}
 
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background: #111827;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Hero */
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+.btn {
+    padding: 10px 20px;
+    background: #6366F1;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.btn-outline {
+    padding: 10px 20px;
+    border: 1px solid white;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+/* Sections */
+.section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+/* Grid */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+/* Cards */
+.card {
+    background: #111827;
+    padding: 20px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Projects */
+.project {
+    background: #111827;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.featured {
+    border: 2px solid #6366F1;
+}
+
+.highlight {
+    color: #22C55E;
+}
