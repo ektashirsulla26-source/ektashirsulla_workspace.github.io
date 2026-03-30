@@ -1,33 +1,39 @@
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: #0B0F19;
-    color: #E5E7EB;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #f9fafb, #eef2ff);
+    color: #111;
 }
 
-/* Navbar */
+/* NAVBAR */
 .navbar {
+    position: sticky;
+    top: 0;
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(10px);
     display: flex;
     justify-content: space-between;
-    padding: 20px;
-    background: #111827;
+    padding: 20px 50px;
 }
 
 .navbar ul {
-    list-style: none;
     display: flex;
     gap: 20px;
+    list-style: none;
 }
 
 .navbar a {
-    color: white;
     text-decoration: none;
+    color: #111;
 }
 
-/* Hero */
+/* HERO */
 .hero {
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    padding: 100px 20px;
 }
 
 .hero h1 {
@@ -39,57 +45,71 @@ body {
 }
 
 .btn {
-    padding: 10px 20px;
     background: #6366F1;
     color: white;
-    text-decoration: none;
-    border-radius: 5px;
+    padding: 10px 20px;
+    border-radius: 8px;
 }
 
 .btn-outline {
+    border: 1px solid #6366F1;
     padding: 10px 20px;
-    border: 1px solid white;
-    text-decoration: none;
     margin-left: 10px;
 }
 
-/* Sections */
+/* SECTION */
 .section {
-    padding: 60px 20px;
+    padding: 80px 50px;
     text-align: center;
 }
 
-/* Grid */
+/* GRID */
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 20px;
 }
 
-/* Cards */
+/* CARD */
 .card {
-    background: #111827;
+    background: rgba(255,255,255,0.6);
+    backdrop-filter: blur(8px);
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 12px;
     transition: 0.3s;
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px);
 }
 
-/* Projects */
-.project {
-    background: #111827;
+/* TIMELINE */
+.timeline-item {
+    margin: 20px 0;
+}
+
+/* PROJECT */
+.project-card {
+    background: white;
     padding: 20px;
-    margin: 10px;
-    border-radius: 10px;
+    margin: 20px auto;
+    width: 60%;
+    border-radius: 12px;
+    transition: 0.3s;
 }
 
-.featured {
-    border: 2px solid #6366F1;
+.project-card:hover {
+    transform: scale(1.05);
 }
 
-.highlight {
-    color: #22C55E;
+/* ANIMATION */
+.fade-in {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 1s;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
