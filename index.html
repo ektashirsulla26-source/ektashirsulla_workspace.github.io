@@ -3,239 +3,809 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ekta Shirsulla | Data Analyst</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
+<title>Ekta Shirsulla | Data Scientist</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family: 'Inter', sans-serif;
+:root {
+  --bg: #faf9f7;
+  --white: #ffffff;
+  --surface: #f3f1ee;
+  --border: #e4e0da;
+  --border2: #d0cbc3;
+  --accent: #1a6b4a;
+  --accent-light: #e8f4ef;
+  --accent2: #2563a8;
+  --accent2-light: #e8f0fb;
+  --text: #1a1814;
+  --body: #4a4640;
+  --muted: #8c857c;
+  --tag-bg: #f0ede8;
 }
 
-body{
-    background:#ffffff;
-    color:#111;
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  line-height: 1.7;
+  overflow-x: hidden;
 }
 
-/* NAVBAR */
-nav{
-    display:flex;
-    justify-content:space-between;
-    padding:25px 8%;
-    position:sticky;
-    top:0;
-    background:#fff;
+/* NAV */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 18px 6%;
+  background: rgba(250,249,247,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
 }
-
-nav a{
-    text-decoration:none;
-    color:#111;
-    margin-left:25px;
-    font-weight:500;
+.nav-logo {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.3rem; color: var(--text); text-decoration: none;
 }
+.nav-links { display: flex; gap: 32px; align-items: center; }
+.nav-links a {
+  text-decoration: none; color: var(--body);
+  font-size: 13.5px; font-weight: 500;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--accent); }
+.nav-hire {
+  background: var(--accent); color: #fff !important;
+  padding: 8px 20px; border-radius: 6px;
+  font-weight: 600 !important; font-size: 13px !important;
+  transition: background 0.2s !important;
+}
+.nav-hire:hover { background: #155a3c !important; }
 
 /* HERO */
-.hero{
-    height:90vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    padding:0 8%;
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 60px;
+  align-items: center;
+  padding: 80px 6% 80px;
+  border-bottom: 1px solid var(--border);
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.hero h1{
-    font-size:55px;
-    font-weight:700;
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--accent-light); color: var(--accent);
+  font-size: 12px; font-weight: 600; letter-spacing: 0.08em;
+  padding: 5px 14px; border-radius: 20px;
+  margin-bottom: 22px; text-transform: uppercase;
+}
+.hero-badge::before { content:''; width:6px; height:6px; border-radius:50%; background:var(--accent); }
+
+.hero h1 {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(2.6rem, 5vw, 4.2rem);
+  font-weight: 400; line-height: 1.1;
+  letter-spacing: -1.5px; margin-bottom: 22px; color: var(--text);
+}
+.hero h1 em {
+  font-style: italic; color: var(--accent);
 }
 
-.hero span{
-    color:#2563eb;
+.hero-desc {
+  font-size: 1rem; color: var(--body); max-width: 460px;
+  line-height: 1.8; margin-bottom: 36px;
 }
 
-.hero p{
-    margin-top:20px;
-    max-width:600px;
-    line-height:1.6;
-    color:#555;
+.hero-cta { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 48px; }
+
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--accent); color: #fff;
+  padding: 12px 26px; border-radius: 8px;
+  font-weight: 600; font-size: 14px; text-decoration: none;
+  transition: background 0.2s, transform 0.2s;
+}
+.btn-primary:hover { background: #155a3c; transform: translateY(-1px); }
+
+.btn-outline {
+  display: inline-flex; align-items: center; gap: 8px;
+  border: 1.5px solid var(--border2); color: var(--body);
+  padding: 12px 26px; border-radius: 8px;
+  font-weight: 500; font-size: 14px; text-decoration: none;
+  transition: border-color 0.2s, color 0.2s;
+}
+.btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+
+.hero-stats {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 20px; padding-top: 32px;
+  border-top: 1px solid var(--border);
+}
+.stat-num {
+  font-family: 'DM Serif Display', serif;
+  font-size: 2rem; color: var(--text); line-height: 1;
+}
+.stat-num span { color: var(--accent); }
+.stat-label { font-size: 11.5px; color: var(--muted); margin-top: 4px; font-weight: 500; }
+
+/* Hero side card */
+.hero-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.05);
+}
+.hero-card-top {
+  display: flex; align-items: center; gap: 16px; margin-bottom: 24px;
+}
+.hero-avatar {
+  width: 56px; height: 56px; border-radius: 14px;
+  background: linear-gradient(135deg, var(--accent-light), var(--accent));
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'DM Serif Display', serif; font-size: 1.5rem; color: #fff;
+}
+.hero-card-name { font-weight: 600; font-size: 1rem; color: var(--text); }
+.hero-card-role { font-size: 12.5px; color: var(--muted); }
+
+.hero-card-divider { height: 1px; background: var(--border); margin: 20px 0; }
+
+.expertise-row {
+  display: flex; flex-direction: column; gap: 10px;
+}
+.expertise-item {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 13px; color: var(--body);
+}
+.expertise-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--accent); flex-shrink: 0;
+}
+.hero-card-tag-group { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 20px; }
+.h-tag {
+  font-size: 11px; padding: 3px 10px; border-radius: 4px;
+  background: var(--tag-bg); color: var(--body); font-weight: 500;
+  font-family: monospace;
 }
 
-/* SECTION */
-section{
-    padding:80px 8%;
+/* SECTIONS */
+.section-wrap {
+  max-width: 1200px; margin: 0 auto;
+  padding: 80px 6%;
+}
+.section-label {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 11px; font-weight: 700; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--accent);
+  margin-bottom: 12px;
+}
+.section-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  font-weight: 400; letter-spacing: -0.8px;
+  margin-bottom: 48px; line-height: 1.15; color: var(--text);
 }
 
-.section-title{
-    font-size:32px;
-    margin-bottom:30px;
-}
+.divider { height: 1px; background: var(--border); }
 
-/* SKILLS GRID */
-.grid{
-    display:grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-    gap:25px;
-}
+/* ABOUT */
+.about-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+.about-text p { color: var(--body); line-height: 1.9; margin-bottom: 18px; font-size: 0.95rem; }
 
-.card{
-    border:1px solid #eee;
-    padding:20px;
-    border-radius:10px;
-    transition:0.3s;
+.about-highlights { display: flex; flex-direction: column; gap: 10px; }
+.highlight-item {
+  display: flex; align-items: flex-start; gap: 14px;
+  padding: 16px 20px;
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: 10px; transition: border-color 0.2s, box-shadow 0.2s;
 }
+.highlight-item:hover { border-color: var(--accent); box-shadow: 0 2px 12px rgba(26,107,74,0.08); }
+.h-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); margin-top: 8px; flex-shrink: 0; }
+.h-text { font-size: 0.87rem; color: var(--body); line-height: 1.65; }
+.h-text strong { color: var(--text); font-weight: 600; }
 
-.card:hover{
-    transform:translateY(-5px);
-    box-shadow:0 10px 25px rgba(0,0,0,0.05);
+/* SKILLS */
+.skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.skill-card {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: 12px; padding: 22px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.skill-card:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.06); }
+.skill-icon { font-size: 1.4rem; margin-bottom: 10px; }
+.skill-title { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 10px; }
+.skill-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+.skill-tag {
+  font-size: 11px; padding: 2px 8px;
+  background: var(--tag-bg); border-radius: 4px; color: var(--body);
+  font-family: monospace;
 }
 
 /* PROJECTS */
-.project{
-    border:1px solid #eee;
-    padding:25px;
-    border-radius:12px;
-    margin-bottom:20px;
-    transition:0.3s;
+.projects-filter { display: flex; gap: 8px; margin-bottom: 32px; flex-wrap: wrap; }
+.filter-btn {
+  padding: 7px 18px; border-radius: 6px;
+  border: 1.5px solid var(--border); background: transparent; color: var(--body);
+  font-size: 12.5px; font-weight: 500; cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  transition: all 0.2s;
 }
+.filter-btn.active { border-color: var(--accent); color: var(--accent); background: var(--accent-light); }
+.filter-btn:hover { border-color: var(--accent); color: var(--accent); }
 
-.project:hover{
-    transform:scale(1.02);
+.projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 16px; }
+.project-card {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: 14px; padding: 26px;
+  transition: transform 0.25s, box-shadow 0.25s;
+  display: flex; flex-direction: column;
 }
+.project-card:hover { transform: translateY(-4px); box-shadow: 0 8px 28px rgba(0,0,0,0.08); }
+.project-card.hidden { display: none; }
+
+.project-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 14px; }
+.project-type {
+  font-size: 10.5px; font-weight: 700; letter-spacing: 0.12em;
+  text-transform: uppercase; padding: 4px 10px; border-radius: 5px;
+}
+.type-ds { background: var(--accent-light); color: var(--accent); }
+.type-da { background: var(--accent2-light); color: var(--accent2); }
+.project-icon { font-size: 1.6rem; }
+
+.project-title { font-size: 0.98rem; font-weight: 600; color: var(--text); margin-bottom: 8px; line-height: 1.35; }
+.project-desc { font-size: 0.82rem; color: var(--body); line-height: 1.75; margin-bottom: 14px; flex: 1; }
+
+.project-metrics { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+.metric {
+  font-size: 11px; font-weight: 600; color: var(--accent);
+  background: var(--accent-light); padding: 3px 10px; border-radius: 4px;
+}
+.metric.blue { color: var(--accent2); background: var(--accent2-light); }
+
+.project-stack { display: flex; flex-wrap: wrap; gap: 5px; }
+.stack-tag { font-size: 10.5px; font-family: monospace; color: var(--muted); padding: 2px 7px; background: var(--tag-bg); border-radius: 3px; }
+
+/* TIMELINE */
+.timeline { position: relative; padding-left: 28px; }
+.timeline::before { content:''; position:absolute; left:0; top:8px; bottom:8px; width:2px; background: var(--border); border-radius: 2px; }
+.timeline-item { position: relative; margin-bottom: 36px; }
+.timeline-item::before {
+  content:''; position:absolute; left:-34px; top:6px;
+  width: 10px; height: 10px; border-radius: 50%;
+  background: var(--accent); border: 2px solid var(--bg);
+  box-shadow: 0 0 0 3px var(--accent-light);
+}
+.timeline-period { font-size: 11.5px; color: var(--accent); font-weight: 600; letter-spacing: 0.06em; margin-bottom: 5px; }
+.timeline-title { font-size: 1.05rem; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+.timeline-sub { font-size: 0.88rem; color: var(--body); line-height: 1.6; }
+
+/* CONTACT */
+.contact-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.contact-text h3 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 2.2rem; font-weight: 400; letter-spacing: -0.5px;
+  margin-bottom: 14px; line-height: 1.2; color: var(--text);
+}
+.contact-text p { color: var(--body); font-size: 0.92rem; line-height: 1.8; margin-bottom: 24px; }
+.contact-availability {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--accent-light); color: var(--accent);
+  font-size: 12px; font-weight: 600; padding: 7px 16px; border-radius: 20px;
+}
+.avail-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); animation: pulse 2s infinite; }
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+
+.contact-links { display: flex; flex-direction: column; gap: 10px; }
+.contact-link {
+  display: flex; align-items: center; gap: 16px;
+  padding: 18px 22px;
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: 12px; text-decoration: none; color: var(--text);
+  transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+.contact-link:hover { border-color: var(--accent); transform: translateX(5px); box-shadow: 0 4px 16px rgba(26,107,74,0.08); }
+.contact-link-icon { font-size: 1.2rem; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; background: var(--accent-light); border-radius: 10px; }
+.contact-link-label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
+.contact-link-val { font-size: 0.9rem; color: var(--text); font-weight: 500; }
 
 /* FOOTER */
-footer{
-    text-align:center;
-    padding:30px;
-    border-top:1px solid #eee;
-    margin-top:50px;
+footer {
+  border-top: 1px solid var(--border);
+  padding: 28px 6%;
+  display: flex; justify-content: space-between; align-items: center;
+  color: var(--muted); font-size: 12.5px;
+  max-width: 100%;
+}
+
+/* FADE */
+.fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.55s ease, transform 0.55s ease; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; }
+  .hero-card { display: none; }
+  .about-layout, .contact-layout { grid-template-columns: 1fr; gap: 36px; }
+  .skills-grid { grid-template-columns: repeat(2, 1fr); }
+  .hero-stats { grid-template-columns: repeat(2, 1fr); }
+  .nav-links { display: none; }
+  footer { flex-direction: column; gap: 8px; text-align: center; }
 }
 </style>
 </head>
-
 <body>
 
-<!-- NAVBAR -->
+<!-- NAV -->
 <nav>
-    <h3>Ekta</h3>
-    <div>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-    </div>
+  <a class="nav-logo" href="#">Ekta Shirsulla</a>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#education">Education</a>
+    <a href="#contact" class="nav-hire">Hire Me</a>
+  </div>
 </nav>
 
 <!-- HERO -->
-<div class="hero">
-    <h1>Hi, I'm <span>Ekta Shirsulla</span></h1>
-    <p>
-    M.Sc. Statistics graduate with expertise in data analysis, machine learning, and dashboard development. 
-    Skilled in Python, SQL, and Power BI to transform complex data into actionable insights.
-    </p>
+<div style="background: var(--white); border-bottom: 1px solid var(--border);">
+  <div class="hero">
+    <div class="fade-in">
+      <div class="hero-badge">Data Scientist &amp; ML Engineer</div>
+      <h1>Turning data into<br><em>confident decisions.</em></h1>
+      <p class="hero-desc">
+        M.Sc. Statistics graduate building end-to-end ML pipelines, deploying interpretable models,
+        and extracting business value from complex datasets — from EDA to production.
+      </p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn-primary">View Projects ↓</a>
+        <a href="https://www.linkedin.com/in/ekta-shirsulla/" class="btn-outline" target="_blank">LinkedIn →</a>
+        <a href="mailto:ektashirsulla26@gmail.com" class="btn-outline">Get in Touch</a>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <div class="stat-num">275<span>K+</span></div>
+          <div class="stat-label">Records Analyzed</div>
+        </div>
+        <div>
+          <div class="stat-num">90<span>%</span></div>
+          <div class="stat-label">Best Model Accuracy</div>
+        </div>
+        <div>
+          <div class="stat-num">10<span>+</span></div>
+          <div class="stat-label">End-to-End Projects</div>
+        </div>
+        <div>
+          <div class="stat-num">1</div>
+          <div class="stat-label">Deployed Streamlit App</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-card fade-in">
+      <div class="hero-card-top">
+        <div class="hero-avatar">ES</div>
+        <div>
+          <div class="hero-card-name">Ekta Shirsulla</div>
+          <div class="hero-card-role">M.Sc. Statistics · Mumbai</div>
+        </div>
+      </div>
+      <div class="hero-card-divider"></div>
+      <div class="expertise-row">
+        <div class="expertise-item"><span class="expertise-dot"></span>Machine Learning & Predictive Modeling</div>
+        <div class="expertise-item"><span class="expertise-dot"></span>Statistical Analysis & Hypothesis Testing</div>
+        <div class="expertise-item"><span class="expertise-dot"></span>NLP & Sentiment Analysis</div>
+        <div class="expertise-item"><span class="expertise-dot"></span>Geospatial & Clustering Analysis</div>
+        <div class="expertise-item"><span class="expertise-dot"></span>Power BI & Streamlit Dashboards</div>
+        <div class="expertise-item"><span class="expertise-dot"></span>ETL Pipelines & PostgreSQL</div>
+      </div>
+      <div class="hero-card-divider"></div>
+      <div class="hero-card-tag-group">
+        <span class="h-tag">Python</span>
+        <span class="h-tag">R</span>
+        <span class="h-tag">SQL</span>
+        <span class="h-tag">XGBoost</span>
+        <span class="h-tag">SHAP</span>
+        <span class="h-tag">Scikit-learn</span>
+        <span class="h-tag">Power BI</span>
+        <span class="h-tag">Streamlit</span>
+      </div>
+    </div>
+  </div>
 </div>
 
-<!-- SUMMARY -->
+<!-- ABOUT -->
 <section id="about">
-    <h2 class="section-title">Summary</h2>
-    <p>
-    Strong background in statistical modeling, regression analysis, clustering, and real-world business problem solving.
-    Experienced in building end-to-end data projects including predictive modeling and decision support systems.
-    </p>
+  <div class="section-wrap">
+    <div class="section-label">About Me</div>
+    <h2 class="section-title">Solving real problems<br>with statistical rigour.</h2>
+    <div class="about-layout">
+      <div class="about-text fade-in">
+        <p>
+          I'm a data scientist with a strong foundation in statistics and hands-on experience building
+          ML systems across diverse domains — credit risk, supply chain, urban economics, NLP, and geospatial analysis.
+        </p>
+        <p>
+          My work goes beyond models: I design full pipelines — from raw data ingestion and statistical validation
+          to explainability, deployment, and dashboard reporting — with a focus on business impact.
+        </p>
+        <p>
+          Currently exploring deep learning and transformer-based NLP to expand my applied ML toolkit.
+        </p>
+      </div>
+      <div class="about-highlights fade-in">
+        <div class="highlight-item">
+          <div class="h-dot"></div>
+          <div class="h-text"><strong>Statistical rigor</strong> — EDA, hypothesis testing (t-test, ANOVA, chi-square), confidence intervals, regression modeling</div>
+        </div>
+        <div class="highlight-item">
+          <div class="h-dot"></div>
+          <div class="h-text"><strong>ML expertise</strong> — XGBoost, Random Forest, KMeans, DBSCAN, K-Modes, SMOTE/SMOTEENN, SHAP explainability</div>
+        </div>
+        <div class="highlight-item">
+          <div class="h-dot"></div>
+          <div class="h-text"><strong>NLP & Geospatial</strong> — VADER sentiment analysis, Folium hotspot mapping, text feature engineering</div>
+        </div>
+        <div class="highlight-item">
+          <div class="h-dot"></div>
+          <div class="h-text"><strong>End-to-end delivery</strong> — ETL pipelines, PostgreSQL, Power BI dashboards, Streamlit app deployment</div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
+
+<div class="divider"></div>
 
 <!-- SKILLS -->
-<section id="skills">
-    <h2 class="section-title">Technical Skills</h2>
-
-    <div class="grid">
-
-        <div class="card">
-            <h4>Databases & ETL</h4>
-            <p>SQL, Excel, Azure, GCP</p>
+<section id="skills" style="background: var(--white);">
+  <div class="section-wrap">
+    <div class="section-label">Technical Skills</div>
+    <h2 class="section-title">Tools &amp; Technologies</h2>
+    <div class="skills-grid fade-in">
+      <div class="skill-card">
+        <div class="skill-icon">🐍</div>
+        <div class="skill-title">Languages</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">R</span>
+          <span class="skill-tag">SQL</span>
         </div>
-
-        <div class="card">
-            <h4>Machine Learning & AI</h4>
-            <p>Python, R, Scikit-Learn, Deep Learning</p>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">🤖</div>
+        <div class="skill-title">Machine Learning</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Scikit-learn</span>
+          <span class="skill-tag">XGBoost</span>
+          <span class="skill-tag">SHAP</span>
+          <span class="skill-tag">SMOTE</span>
+          <span class="skill-tag">VADER</span>
         </div>
-
-        <div class="card">
-            <h4>Data Analysis</h4>
-            <p>Pandas, Power BI, Tableau, Matplotlib</p>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">🧠</div>
+        <div class="skill-title">Deep Learning</div>
+        <div class="skill-tags">
+          <span class="skill-tag">TensorFlow</span>
+          <span class="skill-tag">Keras</span>
+          <span class="skill-tag">ANN</span>
         </div>
-
-        <div class="card">
-            <h4>Deployment</h4>
-            <p>Git, Streamlit, VS Code</p>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">📊</div>
+        <div class="skill-title">Data & Analytics</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Pandas</span>
+          <span class="skill-tag">NumPy</span>
+          <span class="skill-tag">Statsmodels</span>
+          <span class="skill-tag">Matplotlib</span>
+          <span class="skill-tag">Seaborn</span>
         </div>
-
-        <div class="card">
-            <h4>Business Intelligence</h4>
-            <p>KPI Dashboards, Decision Making, Project Management</p>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">🗄️</div>
+        <div class="skill-title">Data Engineering</div>
+        <div class="skill-tags">
+          <span class="skill-tag">PostgreSQL</span>
+          <span class="skill-tag">ETL Pipelines</span>
+          <span class="skill-tag">Excel</span>
         </div>
-
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">📡</div>
+        <div class="skill-title">BI & Deployment</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Power BI</span>
+          <span class="skill-tag">Streamlit</span>
+          <span class="skill-tag">Folium</span>
+          <span class="skill-tag">Git</span>
+        </div>
+      </div>
     </div>
+  </div>
 </section>
+
+<div class="divider"></div>
 
 <!-- PROJECTS -->
 <section id="projects">
-    <h2 class="section-title">Projects</h2>
+  <div class="section-wrap">
+    <div class="section-label">Projects</div>
+    <h2 class="section-title">End-to-End Work</h2>
 
-    <div class="project">
-        <h3>Street Vendors Analysis (Mumbai)</h3>
-        <p>
-        Statistical study analyzing socio-economic factors, migration patterns, and business sustainability using 
-        Regression, Clustering, and Poisson models.
-        </p>
-        <p><strong>Tech:</strong> Python, R, SQL</p>
+    <div class="projects-filter">
+      <button class="filter-btn active" data-filter="all">All Projects</button>
+      <button class="filter-btn" data-filter="ds">Data Science</button>
+      <button class="filter-btn" data-filter="da">Data Analysis</button>
     </div>
 
-    <div class="project">
-        <h3>Telecom Customer Churn Prediction</h3>
-        <p>
-        Machine learning model to identify high-risk customers and improve retention strategies.
-        </p>
-        <p><strong>Tech:</strong> Python, ML Models</p>
+    <div class="projects-grid fade-in">
+      <div class="project-card" data-type="ds">
+        <div class="project-top">
+          <span class="project-type type-ds">Data Science</span>
+          <span class="project-icon">💳</span>
+        </div>
+        <div class="project-title">Credit Risk Classification with XGBoost & SHAP</div>
+        <div class="project-desc">Multi-class classification on 42K loan records. Applied SMOTE/SMOTEENN and threshold tuning. Integrated SHAP for model explainability. Deployed as a real-time Streamlit app.</div>
+        <div class="project-metrics">
+          <span class="metric">78% CV Accuracy</span>
+          <span class="metric">69.4% High-Risk Recall</span>
+          <span class="metric">Deployed ✓</span>
+        </div>
+        <div class="project-stack">
+          <span class="stack-tag">XGBoost</span><span class="stack-tag">SHAP</span><span class="stack-tag">Streamlit</span><span class="stack-tag">SMOTE</span><span class="stack-tag">Scikit-learn</span>
+        </div>
+      </div>
+
+      <div class="project-card" data-type="ds">
+        <div class="project-top">
+          <span class="project-type type-ds">Data Science</span>
+          <span class="project-icon">🍽️</span>
+        </div>
+        <div class="project-title">Restaurant Intelligence System</div>
+        <div class="project-desc">Random Forest rating predictor with VADER sentiment analysis (corr ~0.75). KMeans + DBSCAN clustering for geospatial hotspot detection across 1,000+ locations.</div>
+        <div class="project-metrics">
+          <span class="metric">85–90% Accuracy</span>
+          <span class="metric">Sentiment r ~0.75</span>
+          <span class="metric">1K+ Locations</span>
+        </div>
+        <div class="project-stack">
+          <span class="stack-tag">Random Forest</span><span class="stack-tag">VADER</span><span class="stack-tag">KMeans</span><span class="stack-tag">DBSCAN</span><span class="stack-tag">Folium</span>
+        </div>
+      </div>
+
+      <div class="project-card" data-type="ds">
+        <div class="project-top">
+          <span class="project-type type-ds">Data Science</span>
+          <span class="project-icon">🏙️</span>
+        </div>
+        <div class="project-title">Urban Vendor Segmentation — Mumbai</div>
+        <div class="project-desc">Regression + Poisson modeling on 400+ street vendor records. K-Modes clustering revealing 3 behavioral groups and structured migration patterns across Mumbai regions.</div>
+        <div class="project-metrics">
+          <span class="metric">43% Variance Explained</span>
+          <span class="metric">3 Clusters</span>
+          <span class="metric">VIF &lt; 5</span>
+        </div>
+        <div class="project-stack">
+          <span class="stack-tag">K-Modes</span><span class="stack-tag">Poisson Regression</span><span class="stack-tag">Python</span><span class="stack-tag">R</span>
+        </div>
+      </div>
+
+      <div class="project-card" data-type="ds">
+        <div class="project-top">
+          <span class="project-type type-ds">Data Science</span>
+          <span class="project-icon">📦</span>
+        </div>
+        <div class="project-title">Supply Chain ML Pipeline</div>
+        <div class="project-desc">Late delivery prediction on 180K+ records. Leakage-free feature engineering (delay proxy, profit margin, seasonality). Full ETL + ML pipeline integrated with PostgreSQL.</div>
+        <div class="project-metrics">
+          <span class="metric">180K+ Records</span>
+          <span class="metric">~62% Accuracy</span>
+          <span class="metric">40% Less Manual Work</span>
+        </div>
+        <div class="project-stack">
+          <span class="stack-tag">Random Forest</span><span class="stack-tag">PostgreSQL</span><span class="stack-tag">ETL</span><span class="stack-tag">Feature Engineering</span>
+        </div>
+      </div>
+
+      <div class="project-card" data-type="ds">
+        <div class="project-top">
+          <span class="project-type type-ds">Data Science</span>
+          <span class="project-icon">📈</span>
+        </div>
+        <div class="project-title">Crypto Behavioral Modeling</div>
+        <div class="project-desc">Statistical behavioral analysis across Fear vs. Greed phases on 10K+ transactions. Confirmed significant trading pattern shifts (p &lt; 0.05). Automated reporting pipeline.</div>
+        <div class="project-metrics">
+          <span class="metric">p &lt; 0.05 Confirmed</span>
+          <span class="metric">10K+ Records</span>
+          <span class="metric">Automated Pipeline</span>
+        </div>
+        <div class="project-stack">
+          <span class="stack-tag">Python</span><span class="stack-tag">Hypothesis Testing</span><span class="stack-tag">Feature Engineering</span>
+        </div>
+      </div>
+
+      <div class="project-card" data-type="da">
+        <div class="project-top">
+          <span class="project-type type-da">Data Analysis</span>
+          <span class="project-icon">🏦</span>
+        </div>
+        <div class="project-title">Credit Risk Analysis & Predictive Modeling</div>
+        <div class="project-desc">Analyzed 42K+ loan records. Chi-square, ANOVA, and VIF-based feature selection. SMOTEENN class balancing improved P3 F1 score by ~25%. Identified delinquency as top risk signal.</div>
+        <div class="project-metrics">
+          <span class="metric blue">F1 +25%</span>
+          <span class="metric blue">42K Records</span>
+          <span class="metric blue">Data Quality +25%</span>
+        </div>
+        <div class="project-stack">
+          <span class="stack-tag">Pandas</span><span class="stack-tag">SMOTEENN</span><span class="stack-tag">Chi-square</span><span class="stack-tag">ANOVA</span>
+        </div>
+      </div>
+
+      <div class="project-card" data-type="da">
+        <div class="project-top">
+          <span class="project-type type-da">Data Analysis</span>
+          <span class="project-icon">🍜</span>
+        </div>
+        <div class="project-title">Restaurant Data Analysis & Intelligence</div>
+        <div class="project-desc">Cleaned 1,000+ restaurant records across 15+ features. Statistical tests revealed online delivery restaurants rate 12–18% higher. Built 10+ dashboards identifying 3 key rating drivers.</div>
+        <div class="project-metrics">
+          <span class="metric blue">12–18% Rating Lift</span>
+          <span class="metric blue">10+ Dashboards</span>
+          <span class="metric blue">Data Quality +20%</span>
+        </div>
+        <div class="project-stack">
+          <span class="stack-tag">Pandas</span><span class="stack-tag">t-test</span><span class="stack-tag">ANOVA</span><span class="stack-tag">Visualization</span>
+        </div>
+      </div>
+
+      <div class="project-card" data-type="da">
+        <div class="project-top">
+          <span class="project-type type-da">Data Analysis</span>
+          <span class="project-icon">🚚</span>
+        </div>
+        <div class="project-title">Supply Chain Analytics & ETL Dashboard</div>
+        <div class="project-desc">Processed 180K+ records (53+ features) via ETL pipeline. Power BI dashboard tracking $36.7M revenue, delay trends. Found ~95% late risk in First Class shipping.</div>
+        <div class="project-metrics">
+          <span class="metric blue">$36.7M Revenue Tracked</span>
+          <span class="metric blue">95% Late Risk Found</span>
+          <span class="metric blue">Data Quality +30%</span>
+        </div>
+        <div class="project-stack">
+          <span class="stack-tag">PostgreSQL</span><span class="stack-tag">Power BI</span><span class="stack-tag">ETL</span><span class="stack-tag">Python</span>
+        </div>
+      </div>
+
+      <div class="project-card" data-type="da">
+        <div class="project-top">
+          <span class="project-type type-da">Data Analysis</span>
+          <span class="project-icon">🛒</span>
+        </div>
+        <div class="project-title">Crypto Trading Behavior Analysis</div>
+        <div class="project-desc">Analyzed 10K+ crypto transactions vs sentiment index. ~20–30% volume surge in Greed phases. Traders shrink position sizes ~15–25% during Fear. 5+ visualizations + PDF report.</div>
+        <div class="project-metrics">
+          <span class="metric blue">20–30% Volume Spike</span>
+          <span class="metric blue">95% Confidence</span>
+          <span class="metric blue">10K+ Records</span>
+        </div>
+        <div class="project-stack">
+          <span class="stack-tag">Pandas</span><span class="stack-tag">Hypothesis Testing</span><span class="stack-tag">Visualization</span>
+        </div>
+      </div>
+
+      <div class="project-card" data-type="da">
+        <div class="project-top">
+          <span class="project-type type-da">Data Analysis</span>
+          <span class="project-icon">🏪</span>
+        </div>
+        <div class="project-title">Street Vendors Analysis — Mumbai</div>
+        <div class="project-desc">Survey analysis of 400+ vendors. Multiple linear + Poisson regression. Food vendors earn 35–40% more. 23% income advantage on Western Line. 18% gender income gap uncovered.</div>
+        <div class="project-metrics">
+          <span class="metric blue">Adj. R² = 0.43</span>
+          <span class="metric blue">23% Regional Gap</span>
+          <span class="metric blue">18% Gender Gap</span>
+        </div>
+        <div class="project-stack">
+          <span class="stack-tag">Python</span><span class="stack-tag">R</span><span class="stack-tag">Excel</span><span class="stack-tag">Poisson Regression</span>
+        </div>
+      </div>
     </div>
-
+  </div>
 </section>
 
-<!-- EXPERIENCE -->
-<section>
-    <h2 class="section-title">Work Experience</h2>
-    <p>Add your internship / experience here</p>
-</section>
+<div class="divider"></div>
 
 <!-- EDUCATION -->
-<section>
-    <h2 class="section-title">Education</h2>
-    <p>M.Sc. Statistics</p>
+<section id="education" style="background: var(--white);">
+  <div class="section-wrap">
+    <div class="section-label">Education</div>
+    <h2 class="section-title">Academic Background</h2>
+    <div class="timeline fade-in">
+      <div class="timeline-item">
+        <div class="timeline-period">2022 – 2024</div>
+        <div class="timeline-title">M.Sc. Statistics</div>
+        <div class="timeline-sub">University of Mumbai, Mumbai, Maharashtra<br>
+          Focus: Statistical Modeling, Machine Learning, Multivariate Analysis, Regression</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-period">2019 – 2022</div>
+        <div class="timeline-title">B.Sc. Statistics</div>
+        <div class="timeline-sub">University of Mumbai, Mumbai, Maharashtra</div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- CERTIFICATES -->
-<section>
-    <h2 class="section-title">Certifications</h2>
-    <p>Add certifications here</p>
-</section>
-
-<!-- LANGUAGES -->
-<section>
-    <h2 class="section-title">Languages</h2>
-    <p>English, Hindi, Marathi</p>
-</section>
+<div class="divider"></div>
 
 <!-- CONTACT -->
 <section id="contact">
-    <h2 class="section-title">Contact</h2>
-    <p>Email: your-email@gmail.com</p>
-    <p>LinkedIn: linkedin.com/in/yourprofile</p>
+  <div class="section-wrap">
+    <div class="section-label">Contact</div>
+    <div class="contact-layout">
+      <div class="contact-text fade-in">
+        <h3>Let's work<br>together.</h3>
+        <p>Open to Data Scientist, ML Engineer, and Data Analyst roles. Always happy to connect, collaborate, or talk data.</p>
+        <div class="contact-availability">
+          <span class="avail-dot"></span>
+          Available for opportunities
+        </div>
+      </div>
+      <div class="contact-links fade-in">
+        <a class="contact-link" href="mailto:ektashirsulla26@gmail.com">
+          <span class="contact-link-icon">✉️</span>
+          <div class="contact-link-info">
+            <div class="contact-link-label">Email</div>
+            <div class="contact-link-val">ektashirsulla26@gmail.com</div>
+          </div>
+        </a>
+        <a class="contact-link" href="https://www.linkedin.com/in/ekta-shirsulla/" target="_blank">
+          <span class="contact-link-icon">🔗</span>
+          <div class="contact-link-info">
+            <div class="contact-link-label">LinkedIn</div>
+            <div class="contact-link-val">linkedin.com/in/ekta-shirsulla</div>
+          </div>
+        </a>
+        <a class="contact-link" href="https://github.com/ektashirsulla26-source" target="_blank">
+          <span class="contact-link-icon">⌨️</span>
+          <div class="contact-link-info">
+            <div class="contact-link-label">GitHub</div>
+            <div class="contact-link-val">github.com/EktaShirsulla</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
 </section>
 
 <footer>
-    © 2026 Ekta Shirsulla
+  <span>© 2026 Ekta Shirsulla</span>
+  <span style="color:var(--border2)">Built with purpose. Driven by data.</span>
 </footer>
 
+<script>
+// Filter
+const filterBtns = document.querySelectorAll('.filter-btn');
+const projectCards = document.querySelectorAll('.project-card');
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    filterBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const f = btn.dataset.filter;
+    projectCards.forEach(card => {
+      card.classList.toggle('hidden', f !== 'all' && card.dataset.type !== f);
+    });
+  });
+});
+
+// Scroll fade-in
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+setTimeout(() => document.querySelector('.hero .fade-in')?.classList.add('visible'), 80);
+</script>
 </body>
 </html>
